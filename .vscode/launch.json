@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch",
+            "type": "node",
+            "request": "launch",
+            "args": [
+                "${workspaceFolder}/src/index.ts",
+                "--env=development"
+            ],
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register",
+                "-r",
+                "tsconfig-paths/register",
+                
+            ],
+            "env": { "TS_NODE_PROJECT": "tsconfig.json", },
+        },
+
+        
+        {
+            "name": "Current TS File",
+            "type": "node",
+            "request": "launch",
+            "args": ["${relativeFile}"],
+            "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
+            "program": "${workspaceRoot}/src/index.ts",
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "protocol": "inspector",
+            "outFiles": ["${workspaceRoot}/dist/**/*.js"]
+        }
+          
+          
+    ]
+}
